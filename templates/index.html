@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="shortcut icon" href="/static/assets/favicon.ico" type="image/x-icon">
+    <style>
+        .right2 {
+            display: none
+        }
+    </style>
     <title>ChatGPT Clone</title>
 </head>
+
 <body>
+
     <body class="bg-chatblack-50">
         <div class="flex h-[100vh] text-white">
             <div class="left h-[100vh] bg-[#202123] w-2/12">
-                <button class="w-[90%] py-2 m-2 px-10 space-x-2 border-white border rounded-md flex mx-4 justify-start items-center hover:opacity-70">
-                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                    stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-                    <span>New Chat</span>
-                </button>
-
-                <div class="chats flex flex-col justify-center items-center">
-                    <div class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 bg-gray-600 rounded-md cursor-pointer flex justify-start items-center">
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                <button
+                    class="w-[90%] py-2 m-2 px-10 space-x-2 border-white border rounded-md flex mx-4 justify-start items-center hover:opacity-70">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
                         stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>New Chat</span>
+                </button>
+                <div class="text-xs m-4 mx-8 text-gray-4 00"> Today </div>
+                <div class="chats flex flex-col justify-center items-center">
+                    <div
+                        class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 bg-gray-600 rounded-md cursor-pointer flex justify-start items-center">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                         </svg>
                         <span> Clone AI Assistant </span>
                     </div>
-                    <div class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 rounded-md cursor-pointer flex justify-start items-center">
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                        stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg> 
+                    <div
+                        class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 rounded-md cursor-pointer flex justify-start items-center">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
                         <span> Clone AI Assistant </span>
                     </div>
                 </div>
 
             </div>
 
-            
-
-            <div class="right w-10/12 flex text-center justify-center items-center flex-col">
+            <div class="right1 w-10/12 flex text-center justify-center items-center flex-col">
                 <div class="text-center m-8 w-full text-4xl font-bold">
                     CloneGPT
                 </div>
-                
+
                 <div class="itemsrow flex py-4 w-[43vw] justify-around">
                     <div class="examples flex flex-col justify-center items-center">
-                        <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round"
-                            stroke-linejoin="round" class="h-6 w-6" height="1em" width="1em"
+                        <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" height="1em" width="1em"
                             xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -83,13 +93,12 @@
                             Remembers what user said earlier in the conversation</button>
                         <button class="bg-gray-600 w-[13vw] text-sm py-4 px-4 mx-4  my-2 rounded-md">
                             Allows user to provide follow-up corrections</button>
-                        <button
-                            class="bg-gray-600 w-[13vw] text-sm py-4 px-4 mx-4  my-2 rounded-md">
+                        <button class="bg-gray-600 w-[13vw] text-sm py-4 px-4 mx-4  my-2 rounded-md">
                             Trained to decline inappropriate requests</button>
                     </div>
                     <div class="lim flex flex-col justify-center items-center">
-                        <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round"
-                            stroke-linejoin="round" class="h-6 w-6" height="1em" width="1em"
+                        <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" height="1em" width="1em"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
@@ -98,7 +107,7 @@
                             <line x1="12" y1="17" x2="12.01" y2="17"></line>
                         </svg>
                         <div class="py-4">Limitations</div>
-                        <button class="bg-gray-600 w-[13vw] text-sm  py-4 px-4 mx-4  my-2 rounded-md"> 
+                        <button class="bg-gray-600 w-[13vw] text-sm  py-4 px-4 mx-4  my-2 rounded-md">
                             May occasionally generate incorrect information</button>
                         <button class="bg-gray-600 w-[13vw] text-sm  py-4 px-4 mx-4  my-2 rounded-md">
                             May occasionally produce harmful instructions or biased content</button>
@@ -106,16 +115,16 @@
                             Limited knowledge of world and events after 2021</button>
                     </div>
                 </div>
-                
+
                 <div class="input w-full text-center my-24 flex items-center justify-center flex-col">
                     <div class="buttonsvg pl-16 w-[50vw] flex">
                         <input class="w-full p-4 bg-gray-600 rounded-md" placeholder="Send a Message" type="text"
                             name="text" id="questionInput">
-    
+
                         <button id="sendButton" class="relative -left-20 pl-10">
                             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                                stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em"
-                                xmlns="http://www.w3.org/2000/svg">
+                                stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em"
+                                width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <line x1="22" y1="2" x2="11" y2="13"></line>
                                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                             </svg>
@@ -123,14 +132,55 @@
                     </div>
                     <div class="text-xs py-2 pr-3 opacity-70">Free Research Preview. GPT-3.5 may produce inaccurate
                         information about people, places, or facts.<a class="underline"
-                            href="https://github.com/harshnegi1434/chatgpt-clone"> ChatGPT Clone by Harsh Negi </a></div>
+                            href="https://github.com/harshnegi1434/chatgpt-clone"> ChatGPT Clone by Harsh Negi </a>
+                    </div>
                 </div>
             </div>
-    
+
+            <div class="right2 w-full flex flex-col items-center h-fit">
+                <div class="box1 m-auto flex py-7 justify-start items-center w-[40vw] space-x-6">
+                    <img class="w-9" src="/static/assets/user.jpeg" alt="" \>
+                    <div input="question2"> Question </div>
+                </div>
+                
+                <div class="box2 flex bg-slate-600  py-7 justify-center items-center w-full">
+                    <div class="box w-[40vw] flex justify-start space-x-6">
+                        <img class="w-9 h-9" src="/static/assets/favicon.ico" alt="" \>
+                        <div class=" flex flex-col space-y-4 ">
+                            <div id="question1"> Question </div>
+                            <div id="answer"> Answer </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input pt-96 w-full text-center mt-52 flex items-center justify-center flex-col">
+                    <div class="buttonsvg pl-16 w-[50vw] flex">
+                        <input class="w-full p-4 bg-gray-600 rounded-md" placeholder="Send a Message" type="text"
+                            name="text" id="questionInput">
+
+                        <button id="sendButton" class="relative -left-20 pl-10">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em"
+                                width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="text-xs py-2 pr-3 opacity-70">Free Research Preview. GPT-3.5 may produce inaccurate
+                        information about people, places, or facts.<a class="underline"
+                            href="https://github.com/harshnegi1434/chatgpt-clone"> ChatGPT Clone by Harsh Negi </a>
+                    </div>
+                </div>
 
             </div>
+
         </div>
+
+        <script src="/static/js/script.js"> </script>
+
     </body>
-    
+
 </body>
+
 </html>
