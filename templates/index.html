@@ -31,25 +31,19 @@
                     <span>New Chat</span>
                 </button>
                 <div class="text-xs m-4 mx-8 text-gray-4 00"> Today </div>
-                <div class="chats flex flex-col justify-center items-center">
-                    <div
-                        class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 bg-gray-600 rounded-md cursor-pointer flex justify-start items-center">
+                <div class="chats flex flex-col justify-center items-center space-y-4">
+                    
+                    {% for chat in mychats %}
+                            
+                    <div class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 bg-gray-600 rounded-md cursor-pointer flex justify-start items-center">
                         <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
                             stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                         </svg>
-                        <span> Clone AI Assistant </span>
+                        <span> {{chat.question}} </span>
                     </div>
-                    <div
-                        class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 rounded-md cursor-pointer flex justify-start items-center">
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                            stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                        <span> Clone AI Assistant </span>
-                    </div>
+                    {% endfor %}  
                 </div>
 
             </div>
@@ -140,15 +134,15 @@
             <div class="right2 w-full flex flex-col items-center h-fit">
                 <div class="box1 m-auto flex py-7 justify-start items-center w-[40vw] space-x-6">
                     <img class="w-9" src="/static/assets/user.jpeg" alt="" \>
-                    <div input="question2"> Question </div>
+                    <div id="question2"> Loading... </div>
                 </div>
                 
                 <div class="box2 flex bg-slate-600  py-7 justify-center items-center w-full">
                     <div class="box w-[40vw] flex justify-start space-x-6">
                         <img class="w-9 h-9" src="/static/assets/favicon.ico" alt="" \>
                         <div class=" flex flex-col space-y-4 ">
-                            <div id="question1"> Question </div>
-                            <div id="answer"> Answer </div>
+                            <div id="question1"> Loading... </div>
+                            <div id="answer"> Loading... </div>
                         </div>
                     </div>
                 </div>
