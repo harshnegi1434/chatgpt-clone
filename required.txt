@@ -1,0 +1,4 @@
+flask==2.2.5
+flask-pymongo==2.3.0
+openai==0.27.7
+bardapi==0.1.11
