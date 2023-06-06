@@ -1,12 +1,13 @@
 from flask import Flask, render_template, jsonify, request
 from flask_pymongo import PyMongo
-import openai
-
-openai.api_key = "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"
+from bardapi import Bard
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://harshnegi1434:dFV1pgC7mug6tWbv@gptclone.18xwqt4.mongodb.net/chatgpt"
 mongo = PyMongo(app)
+
+token = 'XAiB_aiN9bJ_U4pGJTWcwwTlPnhJLt6A_enGufQV9o0q0H13Z6YRuMlRZCP1nN_HW9_ZaA.'
+bard = Bard(token=token)
 
 @app.route("/")
 def home():
@@ -22,21 +23,13 @@ def qa():
         question = request.json.get("question")
         chat = mongo.db.chats.find_one({"question":question})
         if chat:
-            data = {"result" : f"{chat['answer']}"}
+            data = {"question": question, "answer":  f"{chat['answer']}"}
             return jsonify(data)
         else:
-            # response = openai.Completion.create(
-            #     model="text-davinci-003",
-            #     prompt=question,
-            #     temperature=1,
-            #     max_tokens=256,
-            #     top_p=1,
-            #     frequency_penalty=0,
-            #     presence_penalty=0
-            # )
-            # data= {{"question": question, "answer": response["choices"][0]["text"]}}
-            data= {"result" : f"Answer of {question}"}
-            mongo.db.chats.insert_one({"question": question, "answer": f"Answer from OPENAI for {question}"})
+            answer = bard.get_answer(question)['content']
+            print (answer)
+            data= {"question": question, "answer": answer}
+            mongo.db.chats.insert_one({"question": question, "answer": answer})
             return jsonify(data)
     data = {"result" : "Thank You"}
     return jsonify(data)
