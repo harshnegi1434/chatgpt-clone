@@ -42,7 +42,7 @@
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                         </svg>
                         <span> {{chat.question}} </span> 
-                        <button id="deleteButton" class="pl-5">
+                        <button id="deleteButton" class="pl-5" onclick="deleteChat('{{ chat.question}}')">
                             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" 
                             class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                             <polyline points="3 6 5 6 21 6"></polyline>
@@ -156,8 +156,8 @@
                     </div>
                 </div>
 
-                <div
-                    class="input pt-96 pl-12 w-full text-center flex items-center justify-center flex-col fixed bottom-0">
+                <div class="container m-auto flex items-center justify-center pl-12">
+                <div class="input w-full text-center flex items-center justify-center flex-col fixed bottom-0">
                     <div class="buttonsvg pl-16 w-[50vw] flex">
                         <input class="w-full p-4 bg-gray-600 rounded-md" placeholder="Send a Message" type="text"
                             name="text" id="newquestionInput">
@@ -175,6 +175,7 @@
                         information about people, places, or facts.<a class="underline"
                             href="https://github.com/harshnegi1434/chatgpt-clone"> ChatGPT Clone by Harsh Negi </a>
                     </div>
+                </div>
                 </div>
 
             </div>

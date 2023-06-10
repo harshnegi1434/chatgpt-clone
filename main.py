@@ -16,6 +16,14 @@ def home():
     #print(mychats)
     return render_template("index.html", mychats = mychats);
 
+collection = mongo.db.chats
+
+@app.route('/delete_chat', methods=['POST'])
+def delete_chat():
+    question = request.json['question']
+    collection.delete_one({'question': question})
+    return jsonify({'message': 'Chat deleted successfully'})
+
 @app.route("/api", methods={"GET", "POST"})
 def qa():
     if request.method == "POST":

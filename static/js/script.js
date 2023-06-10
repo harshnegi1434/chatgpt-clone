@@ -18,10 +18,8 @@ button.addEventListener("click", async() => {
     question1.innerHTML = questionInput
     question2.innerHTML = questionInput
 
-    //Get the Answer
     let result = await postData("/api", {"question" : questionInput})
     answer.innerHTML = result.answer
-    //answer.innerHTML = result.result
 });
 
 const newbutton = document.getElementById("newButton")
@@ -42,9 +40,18 @@ rebutton.addEventListener("click", async() => {
     question2.innerHTML = questionInput
 
     answer.innerHTML = "Loading..."    
-    //Get the Answer
     let result = await postData("/api", {"question" : questionInput})
     answer.innerHTML = result.answer
-    //answer.innerHTML = result.result
 });
 
+function deleteChat(question) {
+  fetch('/delete_chat', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ question: question })
+  })
+  .then(response => response.json())
+  .then(location.reload());
+}
