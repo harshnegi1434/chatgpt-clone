@@ -76,7 +76,8 @@ function deleteChat(question) {
     },
     body: JSON.stringify({ question: question })
   })
-    .then(response => response.json())
-    .then(location.reload());
+  .then(response => response.json());
   location.reload();
+  document.querySelector(".right1").style.display = "flex";
+  document.querySelector(".right2").style.display = "none";
 }
