@@ -9,6 +9,8 @@ mongo = PyMongo(app)
 token = 'XAiB_aiN9bJ_U4pGJTWcwwTlPnhJLt6A_enGufQV9o0q0H13Z6YRuMlRZCP1nN_HW9_ZaA.'
 bard = Bard(token=token)
 
+collection = mongo.db.chats
+
 @app.route("/")
 def home():
     chats = mongo.db.chats.find({})
@@ -16,7 +18,23 @@ def home():
     #print(mychats)
     return render_template("index.html", mychats = mychats);
 
-collection = mongo.db.chats
+@app.route('/get_chat/<question>')
+def get_chat(question):
+    chat = collection.find_one({'question': question})
+    if chat:
+        return jsonify({
+            'question': chat['question'],
+            'answer': chat['answer']
+        })
+    else:
+        return jsonify({'error': 'Chat not found'})
+
+@app.route('/fetch_chat', methods=['POST'])
+def fetch_chat():
+    data = request.get_json()
+    question = data['question']
+    response = get_chat(question)
+    return response
 
 @app.route('/delete_chat', methods=['POST'])
 def delete_chat():
