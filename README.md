@@ -21,7 +21,6 @@ Clone the repository onto your local computer and run:
 2. `npm install`  to install npm packages from  `package.json`
 3. In one terminal run  `npm run tailwind`  to run Tailwind during development - this will start real time compilation of styles used in your HTML templates
 4. In second terminal run  `python main.py`  to start the Flask development server (debug mode is ON). As you add/remove Tailwind classes in HTML templates, the watcher running in step 3 will automatically regenerate your  `app\static\main.css`  file which is picked up the flask server running in step 4.
-5. When ready for production, kill the Flask development server in step 3 and run  `npm run build:prod`  to prepare CSS build ready for production.
 
 ## Setting Up MongoDB Database
 
