@@ -2,7 +2,8 @@
 
 **ChatGPT-Clone** features a layout similar to ChatGPT which provides answer from Bard. User can ask many questions user wants or delete from the database. The data is stored in a database of MongoDB.
 
-**Special Thanks to** [CodeWithHarry (github.com)](https://github.com/CodeWithHarry) and his [video](https://www.youtube.com/watch?v=OAr6AIvH9VY) [dsdanielpark (Daniel Park) (github.com)](https://github.com/dsdanielpark) and his [dsdanielpark/Bard-API: The unofficial python package that returns response of Google Bard through cookie value. (github.com)](https://github.com/dsdanielpark/Bard-API)
+**Special Thanks to** [CodeWithHarry (github.com)](https://github.com/CodeWithHarry) and his [video](https://www.youtube.com/watch?v=OAr6AIvH9VY) & 
+[dsdanielpark (Daniel Park) (github.com)](https://github.com/dsdanielpark) and his [dsdanielpark/Bard-API: The unofficial python package that returns response of Google Bard through cookie value. (github.com)](https://github.com/dsdanielpark/Bard-API)
 
 The project **ChatGPT-clone** adds additional features apart from the above repo and instead of OPENAI API, it uses Bard-API (unofficial currently) due to some personal reasons. The OpenAI API will be replaced later.
 
