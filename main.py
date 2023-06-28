@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://harshnegi1434:6jtJRfySD5xrnMt4@projects.0rrxqmw.mongodb.net/GPTClone"
 mongo = PyMongo(app)
 
-token = 'XAiB_aiN9bJ_U4pGJTWcwwTlPnhJLt6A_enGufQV9o0q0H13Z6YRuMlRZCP1nN_HW9_ZaA.'
+token = 'XwiB_R65DaRlCW-6x5bwIz6DI_lGRpFZ-ZzYm1qDf_zeBA_6QUnaVVmK2Zf0RA2F6v2njg.'
 bard = Bard(token=token)
 
 collection = mongo.db.chats
