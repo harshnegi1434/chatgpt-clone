@@ -1,12 +1,15 @@
+import os
 from flask import Flask, render_template, jsonify, request
 from flask_pymongo import PyMongo
 from bardapi import Bard
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://harshnegi1434:6jtJRfySD5xrnMt4@projects.0rrxqmw.mongodb.net/GPTClone"
 mongo = PyMongo(app)
+load_dotenv()
 
-token = 'ZQiB_TOvP6-t82kwLYB4KVvYjmWzEoTNVvAL3gJFG-N3Hzfo7yD_L40lllodFPah_nwu4g.'
+token = os.getenv('token')
 bard = Bard(token=token)
 
 collection = mongo.db.chats
