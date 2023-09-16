@@ -1,5 +1,5 @@
 anyio==3.7.1
-bardapi==0.1.32
+bardapi==0.1.33
 beautifulsoup4==4.12.2
 blinker==1.4
 browser-cookie3==0.19.1
