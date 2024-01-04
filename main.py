@@ -10,7 +10,7 @@ client = OpenAI(api_key="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")
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://harshnegi1434:6jtJRfySD5xrnMt4@projects.0rrxqmw.mongodb.net/GPTClone"
 mongo = PyMongo(app)
-load_dotenv()
+# load_dotenv()
 
 # token = os.getenv('token')
 # bard = Bard(token=token)
