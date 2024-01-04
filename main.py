@@ -3,10 +3,9 @@ from flask import Flask, render_template, jsonify, request
 from flask_pymongo import PyMongo
 # from bardapi import Bard
 # from bardapi import BardCookies
-from dotenv import load_dotenv
-import openai
+from openai import OpenAI
 
-openai.api_key = "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"
+client = OpenAI(api_key=os.environ.get("token"))
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://harshnegi1434:6jtJRfySD5xrnMt4@projects.0rrxqmw.mongodb.net/GPTClone"
@@ -60,14 +59,19 @@ def qa():
             data = {"question": question, "answer":  f"{chat['answer']}"}
             return jsonify(data)
         else:
-            response = openai.Completion.create(
-                    model="text-davinci-003",
-                    prompt=question,
-                    temperature=0.7,
-                    max_tokens=256,
-                    top_p=1,
-                    frequency_penalty=0,
-                    presence_penalty=0
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                      "role": "user",
+                      "content": question
+                    }
+                ],
+                temperature=1,
+                max_tokens=256,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0
             )
             #print (answer)
             data = {"question": question, "answer": response["choices"][0]["text"]}
