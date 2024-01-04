@@ -16,7 +16,7 @@ load_dotenv()
 cookie_dict = {
     "__Secure-1PSID": "ewjOd1hTqXi6ttqPgC3d0hEp7B-bomHgkzWsn7GXM09dkklJ3F8nL_jOOcR7u7u35-laeA.",
     "__Secure-1PSIDTS": "sidts-CjEBPVxjSpaJTgMT9qdDT2QycMezlAdyUckWbPM6sOqbgEHyJPOeCI3qxhT5i-16UvEYEAA",
-    "__Secure-1PSIDCC", "ABTWhQG3sAlJCeMYqNzFuIkTlFkeLEinGXksCFp6IHRHQyrz0Xz7EE6gBheJBeR6AzHtjBESFw"
+    "__Secure-1PSIDCC": "ABTWhQG3sAlJCeMYqNzFuIkTlFkeLEinGXksCFp6IHRHQyrz0Xz7EE6gBheJBeR6AzHtjBESFw"
 }
 
 bard = BardCookies(cookie_dict=cookie_dict)
