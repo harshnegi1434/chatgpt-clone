@@ -4,8 +4,12 @@ from flask_pymongo import PyMongo
 # from bardapi import Bard
 # from bardapi import BardCookies
 from openai import OpenAI
+from dotenv import load_dotenv
 
-client = OpenAI(api_key="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")
+load_dotenv()
+
+token = os.getenv('token')
+client = OpenAI(api_key=token)
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://harshnegi1434:6jtJRfySD5xrnMt4@projects.0rrxqmw.mongodb.net/GPTClone"
