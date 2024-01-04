@@ -79,7 +79,7 @@ def qa():
             )
             #print (answer)
             data = {"question": question, "answer": response["choices"][0]["text"]}
-            mongo.db.chats.insert_one({"question": question, "answer": response["choices"][0]["text"]})
+            mongo.db.chats.insert_one({"question": question, "answer":  response['choices'][0]['message']['content']})
             return jsonify(data)
     data = {"result" : "Thank You"}
     return jsonify(data)
