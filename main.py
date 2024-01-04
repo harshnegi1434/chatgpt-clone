@@ -1,9 +1,15 @@
 import os
 from flask import Flask, render_template, jsonify, request
 from flask_pymongo import PyMongo
-from bardapi import Bard
-from bardapi import BardCookies
+# from bardapi import Bard
+# from bardapi import BardCookies
 from dotenv import load_dotenv
+import openai
+
+openai.api_key = "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"
+
+
+client = OpenAI()
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://harshnegi1434:6jtJRfySD5xrnMt4@projects.0rrxqmw.mongodb.net/GPTClone"
@@ -12,14 +18,7 @@ load_dotenv()
 
 # token = os.getenv('token')
 # bard = Bard(token=token)
-
-cookie_dict = {
-    "__Secure-1PSID": "ewjOd1hTqXi6ttqPgC3d0hEp7B-bomHgkzWsn7GXM09dkklJ3F8nL_jOOcR7u7u35-laeA.",
-    "__Secure-1PSIDTS": "sidts-CjEBPVxjSpaJTgMT9qdDT2QycMezlAdyUckWbPM6sOqbgEHyJPOeCI3qxhT5i-16UvEYEAA",
-    "__Secure-1PSIDCC": "ABTWhQG3sAlJCeMYqNzFuIkTlFkeLEinGXksCFp6IHRHQyrz0Xz7EE6gBheJBeR6AzHtjBESFw"
-}
-
-bard = BardCookies(cookie_dict=cookie_dict)
+# bard = BardCookies(cookie_dict=cookie_dict)
 
 collection = mongo.db.chats
 
@@ -64,10 +63,18 @@ def qa():
             data = {"question": question, "answer":  f"{chat['answer']}"}
             return jsonify(data)
         else:
-            answer = bard.get_answer(question)['content']
+            response = openai.Completion.create(
+                    model="text-davinci-003",
+                    prompt=question,
+                    temperature=0.7,
+                    max_tokens=256,
+                    top_p=1,
+                    frequency_penalty=0,
+                    presence_penalty=0
+            )
             #print (answer)
-            data= {"question": question, "answer": answer}
-            mongo.db.chats.insert_one({"question": question, "answer": answer})
+            data = {"question": question, "answer": response["choices"][0]["text"]}
+            mongo.db.chats.insert_one({"question": question, "answer": response["choices"][0]["text"]})
             return jsonify(data)
     data = {"result" : "Thank You"}
     return jsonify(data)
