@@ -78,7 +78,7 @@ def qa():
                 presence_penalty=0
             )
             #print (answer)
-            data = {"question": question, "answer": response["choices"][0]["text"]}
+            data = {"question": question, "answer": response['choices'][0]['message']['content']}
             mongo.db.chats.insert_one({"question": question, "answer":  response['choices'][0]['message']['content']})
             return jsonify(data)
     data = {"result" : "Thank You"}
