@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, jsonify, request
 from flask_pymongo import PyMongo
 from bardapi import Bard
+from bardapi import BardCookies
 from dotenv import load_dotenv
 
 app = Flask(__name__)
@@ -9,8 +10,16 @@ app.config["MONGO_URI"] = "mongodb+srv://harshnegi1434:6jtJRfySD5xrnMt4@projects
 mongo = PyMongo(app)
 load_dotenv()
 
-token = os.getenv('token')
-bard = Bard(token=token)
+# token = os.getenv('token')
+# bard = Bard(token=token)
+
+cookie_dict = {
+    "__Secure-1PSID": "ewjOd1hTqXi6ttqPgC3d0hEp7B-bomHgkzWsn7GXM09dkklJ3F8nL_jOOcR7u7u35-laeA.",
+    "__Secure-1PSIDTS": "sidts-CjEBPVxjSpaJTgMT9qdDT2QycMezlAdyUckWbPM6sOqbgEHyJPOeCI3qxhT5i-16UvEYEAA",
+    "__Secure-1PSIDCC", "ABTWhQG3sAlJCeMYqNzFuIkTlFkeLEinGXksCFp6IHRHQyrz0Xz7EE6gBheJBeR6AzHtjBESFw"
+}
+
+bard = BardCookies(cookie_dict=cookie_dict)
 
 collection = mongo.db.chats
 
