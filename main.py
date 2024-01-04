@@ -6,8 +6,6 @@ from flask_pymongo import PyMongo
 from dotenv import load_dotenv
 import openai
 
-client = OpenAI()
-
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://harshnegi1434:6jtJRfySD5xrnMt4@projects.0rrxqmw.mongodb.net/GPTClone"
 mongo = PyMongo(app)
